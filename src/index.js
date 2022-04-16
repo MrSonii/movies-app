@@ -1,8 +1,10 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import "./index.css";
 import App from "./screens/Home";
+import MovieDetail from "./screens/MovieDetails";
 import reportWebVitals from "./reportWebVitals";
 
 createRoot(document.getElementById("root")).render(
@@ -10,6 +12,7 @@ createRoot(document.getElementById("root")).render(
     <Router>
       <Routes>
         <Route path="/" element={<App />} />
+        <Route path="/detailPage/:id" element={<MovieDetail />} />
       </Routes>
     </Router>
   </React.StrictMode>

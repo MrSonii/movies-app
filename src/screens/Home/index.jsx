@@ -5,16 +5,16 @@ import { search } from "fast-fuzzy";
 
 import "./styles.css";
 
-function debounce(func, time = 100) {
-  let timeout;
+// function debounce(func, time = 100) {
+//   let timeout;
 
-  return function (...args) {
-    const ref = this;
+//   return function (...args) {
+//     const ref = this;
 
-    clearTimeout(timeout);
-    timeout = setTimeout(() => func(...args), time);
-  };
-}
+//     clearTimeout(timeout);
+//     timeout = setTimeout(() => func(...args), time);
+//   };
+// }
 
 function App() {
   const [allMovies, setAllMovies] = useState();
@@ -37,7 +37,7 @@ function App() {
     }
   };
 
-  const debouncedQueryChange = debounce(handleQueryChange, 300);
+  // const debouncedQueryChange = debounce(handleQueryChange, 300);
 
   useEffect(() => {
     (async () => {

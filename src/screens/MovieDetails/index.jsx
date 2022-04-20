@@ -16,7 +16,6 @@ export default function MovieDetail() {
           `https://api.themoviedb.org/3/movie/${params.id}?api_key=61beac6430ea7906d08c6db652d25f36`
         );
 
-        console.log(resp.data);
         setMovieData(resp.data);
       } catch (err) {
         alert(err.message);
@@ -27,8 +26,16 @@ export default function MovieDetail() {
   if (!movieData) {
     return <h1 className="loading">Loading...</h1>;
   }
+
+  console.log(movieData);
   return (
-    <div className="app">
+    <div className="detail-page">
+      <div className="poster-cont">
+        <img
+          className="poster-img"
+          src={`https://image.tmdb.org/t/p/w500/${movieData.poster_path}`}
+        ></img>
+      </div>
       <div>
         <img
           className="movie-img"
